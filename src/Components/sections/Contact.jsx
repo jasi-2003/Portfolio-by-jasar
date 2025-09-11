@@ -5,24 +5,24 @@ import emailjs from 'emailjs-com'
 
 export const Contact = () => {
   const [formData, setFormDate] = useState({
-    name:"",
+    name: "",
     email: "",
-    message:"",
+    message: "",
   })
 
-   const SERVICE_ID = "service_0n4quri"
-   const TEMPLATE_ID ="template_x6wjg3j"
-   const PUBLIC_KEY ="ZfZRlg-KybRyQ-Ija"
+  const SERVICE_ID = "service_0n4quri"
+  const TEMPLATE_ID = "template_x6wjg3j"
+  const PUBLIC_KEY = "ZfZRlg-KybRyQ-Ija"
 
-   const handleSubmit = (e) =>{
-     e.preventDefault()
+  const handleSubmit = (e) => {
+    e.preventDefault()
 
-     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY).then((result) =>{
-         alert("Message send!");
-         setFormDate({name:"", email:"", message:"",})
-     }).catch(() => alert("Oops! Something went wrong. Please try again.."))
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY).then((result) => {
+      alert("Message send!");
+      setFormDate({ name: "", email: "", message: "", })
+    }).catch(() => alert("Oops! Something went wrong. Please try again.."))
 
-   };
+  };
 
 
   return (
@@ -47,8 +47,8 @@ export const Contact = () => {
                 value={formData.name}
                 className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-red-500 focus:bg-red-500/5"
                 placeholder="Name..."
-                onChange={(e) => setFormDate({...formData, name: e.target.value})}
-                />
+                onChange={(e) => setFormDate({ ...formData, name: e.target.value })}
+              />
 
             </div>
 
@@ -61,8 +61,8 @@ export const Contact = () => {
                 value={formData.email}
                 className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-red-500 focus:bg-red-500/5"
                 placeholder="@gmail.com"
-                onChange={(e) => setFormDate({...formData, email: e.target.value})}
-                 />
+                onChange={(e) => setFormDate({ ...formData, email: e.target.value })}
+              />
 
             </div>
 
@@ -75,13 +75,13 @@ export const Contact = () => {
                 value={formData.message}
                 className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-red-500 focus:bg-red-500/5"
                 placeholder="message..."
-                onChange={(e) => setFormDate({...formData, message: e.target.value})}
-                 />
+                onChange={(e) => setFormDate({ ...formData, message: e.target.value })}
+              />
 
             </div>
             <button
-            type="submit"
-            className="w-full bg-gradient-to-r from-red-500 to-pink-400 py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15xp_rgba(59,130,246,0.4)]">
+              type="submit"
+              className="w-full bg-gradient-to-r from-red-500 to-pink-400 py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15xp_rgba(59,130,246,0.4)]">
               Send Message
             </button>
 

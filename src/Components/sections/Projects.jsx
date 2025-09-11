@@ -77,7 +77,7 @@ export const Projects = () => {
                     className="bg-gradient-to-r from-red-500 to-pink-400 text-black py-1 px-4 rounded-full transition-colors my-4"
                     target="_blank"
                   >
-                    View Project →
+                    Source Code
                   </a>
                 </div>
               </div>
