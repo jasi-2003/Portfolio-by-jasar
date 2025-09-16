@@ -26,16 +26,16 @@ export const About = () => {
 
 
           <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-red-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all">
+
             <div className="z-10 px-6 w-full max-w-5xl flex flex-col md:flex-row items-center md:items-start md:space-x-10 mb-8">
 
               <img
                 src={profilePic}
                 alt="Jasar Husain"
-                className="w-40 h-45 rounded-2xl shadow-lg border-2 border-pink-400 object-cover"
+                className="w-60 h-60 rounded-2xl shadow-lg border-2 border-pink-400 object-cover"
               />
 
-            </div>
-
+            
             <p className="text-white mb-6">
               Python Django Full-Stack Developer skilled in HTML, CSS,
               JavaScript, React, Bootstrap, MYSQL, and REST APIs,
@@ -43,7 +43,9 @@ export const About = () => {
               role to leverage expertise in Django-based development and
               optimize user experiences.
             </p>
-
+           
+           
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 

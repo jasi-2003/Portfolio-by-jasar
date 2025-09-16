@@ -7,6 +7,7 @@ export const Contact = () => {
   const [formData, setFormDate] = useState({
     name: "",
     email: "",
+    subject: "",
     message: "",
   })
 
@@ -19,7 +20,7 @@ export const Contact = () => {
 
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY).then((result) => {
       alert("Message send!");
-      setFormDate({ name: "", email: "", message: "", })
+      setFormDate({ name: "", email: "", subject: "", message: "", })
     }).catch(() => alert("Oops! Something went wrong. Please try again.."))
 
   };
@@ -31,13 +32,16 @@ export const Contact = () => {
       className="min-h-screen flex items-center justify-center py-20"
     >
       <RevealOnScroll>
-        <div className="px-4 w-150">
+        <div className="px-4 w-150 p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-red-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all">
           <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-red-500 to-pink-400 bg-clip-text text-transparent text-center">
             {" "}
-            Contact me'
+            Contact Me
           </h2>
+           
+          
 
           <form className="space-y-6" onSubmit={handleSubmit}>
+            
             <div className="relative">
               <input
                 type="text"
@@ -46,7 +50,7 @@ export const Contact = () => {
                 required
                 value={formData.name}
                 className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-red-500 focus:bg-red-500/5"
-                placeholder="Name..."
+                placeholder="Name"
                 onChange={(e) => setFormDate({ ...formData, name: e.target.value })}
               />
 
@@ -60,12 +64,24 @@ export const Contact = () => {
                 required
                 value={formData.email}
                 className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-red-500 focus:bg-red-500/5"
-                placeholder="@gmail.com"
+                placeholder="Email"
                 onChange={(e) => setFormDate({ ...formData, email: e.target.value })}
               />
 
             </div>
 
+            <div className="relative">
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                required
+                value={formData.subject}
+                className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-red-500 focus:bg-red-500/5"
+                placeholder="subject"
+                onChange={(e) => setFormDate({ ...formData, subject: e.target.value })}
+              />
+            </div>
             <div className="relative">
               <textarea
                 id="message"
@@ -74,7 +90,7 @@ export const Contact = () => {
                 required
                 value={formData.message}
                 className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-red-500 focus:bg-red-500/5"
-                placeholder="message..."
+                placeholder="message"
                 onChange={(e) => setFormDate({ ...formData, message: e.target.value })}
               />
 
@@ -87,6 +103,7 @@ export const Contact = () => {
 
           </form>
         </div>
+        
       </RevealOnScroll>
     </section>
   );
