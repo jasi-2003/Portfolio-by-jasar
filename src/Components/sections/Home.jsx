@@ -1,5 +1,7 @@
 import { RevealOnScroll } from "../RevealOnScroll";
-import { FaEye, FaEnvelope, FaInstagram, FaWhatsapp, FaGithub, FaLinkedin, FaXTwitter  } from "react-icons/fa";
+import { FaEye, FaEnvelope, FaInstagram, FaWhatsapp, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6"; 
+
 
 export const Home = () => {
   return (
